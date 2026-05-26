@@ -1,0 +1,13 @@
+<div class="row wrapper">
+  <img src="assets/menu-expand-right.svg" alt="menu expander" class="menu-expander showOnPhone" (click)="clickMenu($event)">
+  <div class="menu-bar hideOnPhone col-1">
+    <app-menu [outerClickHandler]="this.toggleMenu"></app-menu>
+  </div>
+  <div class="main-content col-7">
+    <router-outlet></router-outlet>
+  </div>
+  <img src="assets/menu-expand-right.svg" alt="menu expander" class="marginal-content-expander showOnPhone invert" (click)="clickMarginalContent($event)">
+  <div class="marginal-content hideOnPhone col-4" align="center">
+    <app-nostr-content></app-nostr-content>
+  </div>
+</div>

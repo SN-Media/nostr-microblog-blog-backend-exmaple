@@ -1,0 +1,59 @@
+<div class="teaser">
+  <div class="content align-items-center justify-content-center vh-100">
+    <h1>MotoRoSt Blog</h1><br><br>
+
+    <section class="social-media">
+      <a href="https://www.facebook.com/robert.stiehler.9" target="_blank" aria-label="Facebook">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M22 12a10 10 0 1 0-11.6 9.9v-7h-2.5V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0 0 22 12z"></path>
+        </svg>
+      </a>
+      <a href="https://www.instagram.com/motorost_22/" target="_blank" aria-label="Instagram">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+          <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+          <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
+        </svg>
+      </a>
+      <a href="https://www.x.com/motorost_22" target="_blank" aria-label="X">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M18.9 2h3.3l-7.2 8.2L23.5 22h-6.6l-5.2-6.8L5.8 22H2.5l7.7-8.8L2 2h6.8l4.7 6.2L18.9 2zM17.7 19.9h1.8L7.8 4H5.9l11.8 15.9z"></path>
+        </svg>
+      </a>
+      <a href="https://nosta.me/npub152u5nkjfumy0mkmsqzl70r4cgeqz7vxpkwjhdk47qcypxql0qvxq6qcd8m" target="_blank" aria-label="Nostr">
+        <img src="assets/nostr-logo.svg" alt="Nostr Logo" class="social-media-icon" width="24" height="24">
+      </a>
+    </section>
+
+    <section class="blog">
+      @if (blogLoading) {
+        <div class="blog-status">
+          <img src="assets/nostr-logo.svg" alt="Nostr Logo" class="nostr-logo loading">
+        </div>
+      }
+
+      @if (!blogLoading && blogEntries.length === 0) {
+        <div class="blog-status">
+          Keine Blogeinträge gefunden.
+        </div>
+      }
+
+      @for (entry of blogEntries; track entry) {
+        <article class="blog-entry">
+          @if (entry.image) {
+            <img class="blog-entry-image" [src]="entry.image" [alt]="entry.title">
+          }
+          <div class="blog-entry-body">
+            <div class="blog-entry-date">
+              {{ entry.date * 1000 | date:'dd.MM.yyyy' }}
+            </div>
+            <h3>{{ entry.title }}</h3>
+            <!--          <p class="blog-entry-summary" *ngIf="entry.summary">{{ entry.summary }}</p>-->
+            <div class="blog-entry-content" [innerHTML]="formatContent(entry.event.content)"></div>
+          </div>
+        </article>
+      }
+    </section>
+  </div>
+</div>

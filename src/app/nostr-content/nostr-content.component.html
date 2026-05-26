@@ -1,0 +1,52 @@
+<a href="https://nosta.me/nprofile1qyfhwumn8ghj7ur4wfcxcetsv9njuetn9uq3samnwvaz7tmpwshxummnw3e8wmmjddejucm0d5hsqg8c8zm2q0vdqyn6n2vwslqpg26j3yt2gvmt55m7zsf35t6380kvzu2mulq5" target="_blank"><img src="assets/nostr-logo.svg" alt="Nostr Logo" class="nostr-logo {{eventsFired != eventsDone ? 'loading' : 'not-loading'}}"></a><br>
+<nostr-follow-button npub="npub1lqutdgpa35qj02df36ruq9pt22y3dfpndwjn0c2pxx302ya7ests6uefxw" relays="https://nostr-relay.sn-media.com/, wss://lightningrelay.com/, wss://relay.primal.net/" theme="dark"></nostr-follow-button>
+@if (eventsFired > 0 && eventsFired == eventsDone) {
+  <div>
+    @for (item of events; track item; let i = $index) {
+      <div class="nostr-note" >
+        <img class="avatar" [src]="item.authorProfile?.picture || 'assets/pixel_me.webp'" alt="Avatar">
+        <div class="note">
+          <div class="row">
+            <div class="author">
+              <div class="row">
+                <div class="col-6 author-name">
+                  {{ item.authorProfile?.name || authorName || 'Unknown' }}
+                </div>
+                <div class="col-6 note-date">
+                  {{ item.event.created_at * 1000 | date:'dd.MM.yyyy - HH:mm:ss' }}
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="note-type" [ngClass]="item.type">
+              {{ item.type === 'reply' ? 'REPLY' : 'POST' }}
+            </div>
+          </div>
+          @if (item.type === 'reply' && item.parent) {
+            <div class="row">
+              <div class="parent-note">
+                <div class="parent-title">Replying to</div>
+                <div class="parent-author">
+                  <img class="parent-avatar" [src]="item.parentAuthorProfile?.picture || 'assets/pixel_me.webp'" alt="Avatar">
+                  <div class="parent-name">
+                    {{ item.parentAuthorProfile?.name || 'Unknown' }}
+                  </div>
+                </div>
+                <div class="parent-date">
+                  {{ item.parent.created_at * 1000 | date:'dd.MM.yyyy - HH:mm:ss' }}
+                </div>
+                <div class="parent-text" [innerHTML]="sanitizer.bypassSecurityTrustHtml(transformContent(item.parent.content))"></div>
+              </div>
+            </div>
+          }
+          <div class="row">
+            <div class="text">
+              <div [innerHTML]="sanitizer.bypassSecurityTrustHtml(transformContent(item.event.content))"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    }
+  </div>
+}

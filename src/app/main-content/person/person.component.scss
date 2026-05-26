@@ -1,0 +1,40 @@
+.teaser {
+  position: relative;
+  left: -11px;
+  top: -10px;
+  height: calc(100% + 10px);
+  border-top-left-radius: 20px;
+  background:url('/assets/rhoen_horizon.webp') no-repeat center center; background-size:cover;
+  mask-image: linear-gradient(to right, rgba(0, 0, 0, 1.0) 50%, transparent 100%);
+
+  overflow-y: scroll;
+  overflow-x: hidden;
+
+  .content {
+    text-align: center;
+    min-height: 100vh;
+
+    .me-bulletin-left {
+      border-right: black 1px solid;
+    }
+
+    .me-bulletin-points {
+      font-size: 1.5em;
+      line-height: 2em;
+      color: #ffffff;
+      text-shadow:
+              -1px -1px 0 #000,
+              1px -1px 0 #000,
+              -1px  1px 0 #000,
+              1px  1px 0 #000;
+    }
+
+    sub {
+      bottom: 1.25em;
+    }
+
+    .me-bulletin-image {
+      height: 300px;
+    }
+  }
+}

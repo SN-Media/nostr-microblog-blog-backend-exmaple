@@ -1,0 +1,44 @@
+@font-face {
+  font-family: 'Infinity';
+  src: url('/assets/infinity-webfont.eot');
+  src: url('/assets/infinity-webfont.svg#Infinity') format('svg'),
+  url('/assets/infinity-webfont.eot?#iefix') format('embedded-opentype'),
+  url('/assets/infinity-webfont.woff') format('woff'),
+  url('/assets/infinity-webfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.teaser {
+  position: relative;
+  left: -11px;
+  top: -10px;
+  height: calc(100% + 10px);
+  border-top-left-radius: 20px;
+  background:url('/assets/bitcoin_skull.webp') no-repeat center center; background-size:cover;
+  mask-image: linear-gradient(to right, rgba(0, 0, 0, 1.0) 50%, transparent 100%);
+
+  .content {
+    text-align: center;
+
+    .top-subline {
+      font-family: Menlo, Consolas, monospace;
+      font-size: 25px;
+      letter-spacing: 0.1em;
+      text-shadow: none;
+      color: #ffffff;
+    }
+
+    h1 {
+      text-shadow: 0 5px 3px #2E2B2B;
+      font-family: 'Infinity', serif;
+      font-size: 5em;
+      display: inline-block;
+      color: #16a085;
+      font-weight: 600;
+      line-height: 1em;
+      letter-spacing: 0.3em;
+      margin-bottom: 25px;
+    }
+  }
+}

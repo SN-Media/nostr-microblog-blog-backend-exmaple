@@ -1,0 +1,18 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* Importing Bootstrap SCSS file. */
+@use 'bootstrap/scss/bootstrap';
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+html {
+  @media (max-width: 960px) {
+    overflow-y: hidden;
+  }
+}
+body {
+  background-color: #4d4e51;
+  overflow-y: hidden;
+  overflow-x: hidden;
+}

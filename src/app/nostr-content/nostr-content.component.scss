@@ -1,0 +1,116 @@
+.nostr-logo {
+  height: 64px;
+  width: 64px;
+  margin-top: 25px;
+}
+.nostr-logo.loading {
+  animation: slow-rotate 3s linear infinite;
+}
+.nostr-logo.not-loading {
+}
+nostr-follow-button {
+  position: relative;
+  top: 10px;
+
+}
+@keyframes slow-rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+h1 {
+  a {
+    color: #8d45dd;
+    text-decoration: none;
+  }
+}
+.nostr-note {
+  width: 90%;
+
+  padding-bottom: 25px;
+  padding-top: 25px;
+
+  color: #ffffff;
+
+  .avatar {
+    height: 64px;
+    width: 64px;
+    border-radius: 50%;
+    object-fit: cover;
+    float: left;
+    margin-right: 10px;
+  }
+  .author {
+    .author-name {
+      text-align: left;
+    }
+    .note-date {
+      text-align: right;
+    }
+    font-weight: bold;
+    padding-bottom: 5px;
+  }
+  .note-type {
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 10px;
+    margin-bottom: 8px;
+    &.post {
+      background: rgba(141, 69, 221, 0.25);
+      border: 1px solid rgba(141, 69, 221, 0.6);
+    }
+    &.reply {
+      background: rgba(64, 193, 255, 0.2);
+      border: 1px solid rgba(64, 193, 255, 0.6);
+    }
+  }
+  .parent-note {
+    border-left: 2px solid rgba(255, 255, 255, 0.35);
+    margin: 8px 0 12px 12px;
+    padding: 8px 12px;
+    background: rgba(255, 255, 255, 0.05);
+    .parent-author {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 4px;
+      .parent-avatar {
+        height: 28px;
+        width: 28px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+      .parent-name {
+        font-weight: bold;
+      }
+    }
+    .parent-title {
+      font-weight: bold;
+      margin-bottom: 4px;
+      opacity: 0.85;
+    }
+    .parent-date {
+      font-size: 12px;
+      opacity: 0.7;
+      margin-bottom: 6px;
+    }
+  }
+  .text {
+    text-align: justify;
+    a {
+      color: #ffffff;
+      font-weight: bold;
+      text-decoration: none;
+    }
+  }
+
+  img {
+    width: 50%;
+  }
+}

@@ -1,0 +1,22 @@
+<div class="row">
+  <div class="icon">
+    <a routerLink="/" class="meLink" (click)="menuItemClick('/')">
+      <img src="assets/pixel_me.webp">
+    </a>
+  </div>
+</div>
+<div class="row">
+  <a routerLink="/me" class="iconLink" (click)="menuItemClick('/me')"><fa-icon [icon]="faUser"></fa-icon></a>
+</div>
+<div class="row">
+  <a routerLink="/develop" class="iconLink" (click)="menuItemClick('/develop')"><fa-icon [icon]="faCode"></fa-icon></a>
+</div>
+<div class="row">
+  <a routerLink="/motorcycle" class="iconLink" (click)="menuItemClick('/motorcycle')"><fa-icon [icon]="faMotorcycle"></fa-icon></a>
+</div>
+<div class="row">
+  <a routerLink="/icelandhorse" class="iconLink" (click)="menuItemClick('/icelandhorse')"><fa-icon [icon]="faHorse"></fa-icon></a>
+</div>
+<div class="row">
+  <a routerLink="/bitcoin" class="iconLink" (click)="menuItemClick('/bitcoin')"><fa-icon [icon]="faBitcoin"></fa-icon></a>
+</div>
