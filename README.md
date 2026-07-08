@@ -1,6 +1,6 @@
-# RobertstiehlerMe
+# Example: microblog & Blog backend with nostr
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.7.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.7 and became upgrade to Angular 21
 
 ## Development server
 
