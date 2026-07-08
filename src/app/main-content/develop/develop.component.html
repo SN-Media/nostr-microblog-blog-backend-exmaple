@@ -24,7 +24,7 @@
             <div class="blog-entry-date">
               {{ entry.date * 1000 | date:'dd.MM.yyyy' }}
             </div>
-            <h3>{{ entry.title }}</h3>
+            <h3><a class="blog-entry-title-link" [routerLink]="['/develop/blog', entry.identifier]">{{ entry.title }}</a></h3>
             <!--          <p class="blog-entry-summary" *ngIf="entry.summary">{{ entry.summary }}</p>-->
             <div class="blog-entry-content" [innerHTML]="formatContent(entry.event.content)"></div>
           </div>

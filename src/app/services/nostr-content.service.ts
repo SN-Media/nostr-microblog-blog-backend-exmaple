@@ -117,6 +117,22 @@ export class NostrContentService implements OnDestroy {
     return defer(() => from(this.pool.get(relays, filter)));
   }
 
+  loadEventByIdentifier(
+      pubKey: string,
+      identifier: string,
+      kind: number = 30023,
+      relays: string[] = DEFAULT_NOSTR_RELAYS
+  ): Observable<Event | null> {
+    const filter: Filter = {
+      authors: [pubKey],
+      kinds: [kind],
+      '#d': [identifier],
+      limit: 1
+    };
+
+    return defer(() => from(this.pool.get(relays, filter)));
+  }
+
   ngOnDestroy(): void {
     this.pool.destroy();
   }

@@ -1,0 +1,118 @@
+.blog-detail-page {
+  position: relative;
+  left: -11px;
+  top: -10px;
+  height: calc(100% + 10px);
+  border-top-left-radius: 20px;
+  background-color: #1a1a1a;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  mask-image: linear-gradient(to right, rgba(0, 0, 0, 1.0) 50%, transparent 100%);
+  overflow-y: scroll;
+  overflow-x: hidden;
+
+  .content {
+    width: min(900px, calc(100% - 48px));
+    margin: 0 auto;
+    padding: 32px 0 60px;
+    color: #ffffff;
+  }
+
+  .back-link {
+    display: inline-block;
+    margin-bottom: 24px;
+    color: #7ee0c6;
+    text-decoration: none;
+    font-family: Menlo, Consolas, monospace;
+    font-size: 0.95rem;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .blog-status {
+    font-size: 1.2rem;
+    text-align: center;
+    margin-top: 60px;
+  }
+
+  .nostr-logo {
+    height: 64px;
+    width: 64px;
+  }
+
+  .nostr-logo.loading {
+    animation: slow-rotate 3s linear infinite;
+  }
+
+  .blog-article {
+    background: rgba(0, 0, 0, 0.45);
+    border-radius: 8px;
+    padding: 32px;
+
+    h1 {
+      margin: 0 0 24px;
+      font-size: 2rem;
+      line-height: 1.2;
+      color: #ffffff;
+    }
+  }
+
+  .blog-article-image {
+    width: 100%;
+    max-height: 420px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-bottom: 24px;
+  }
+
+  .blog-entry-date {
+    font-family: Menlo, Consolas, monospace;
+    font-size: 0.9rem;
+    color: #d6f4ec;
+    text-align: right;
+    margin-bottom: 8px;
+  }
+
+  .blog-article-content {
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+    text-align: justify;
+
+    ::ng-deep a {
+      color: #7ee0c6;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    ::ng-deep .blog-entry-media {
+      display: flex;
+      justify-content: center;
+      margin: 16px 0;
+    }
+
+    ::ng-deep img {
+      max-width: 100%;
+      max-height: 500px;
+      height: auto;
+      border-radius: 6px;
+    }
+  }
+
+  @media (max-width: 720px) {
+    .blog-article {
+      padding: 18px;
+    }
+  }
+}
+
+@keyframes slow-rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

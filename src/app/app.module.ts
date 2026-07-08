@@ -14,6 +14,7 @@ import { DevelopComponent } from './main-content/develop/develop.component';
 import { MotorcycleComponent } from './main-content/motorcycle/motorcycle.component';
 import { IcelandhorseComponent } from './main-content/icelandhorse/icelandhorse.component';
 import { BitcoinComponent } from './main-content/bitcoin/bitcoin.component';
+import { BlogDetailComponent } from './main-content/blog-detail/blog-detail.component';
 import {VgCoreModule} from "@videogular/ngx-videogular/core";
 
 @NgModule({
@@ -26,7 +27,8 @@ import {VgCoreModule} from "@videogular/ngx-videogular/core";
     DevelopComponent,
     MotorcycleComponent,
     IcelandhorseComponent,
-    BitcoinComponent
+    BitcoinComponent,
+    BlogDetailComponent
   ],
     imports: [
         BrowserModule,

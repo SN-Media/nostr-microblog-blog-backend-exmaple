@@ -1,0 +1,33 @@
+<div class="blog-detail-page" [style.backgroundImage]="backgroundImage ? 'url(' + backgroundImage + ')' : null">
+  <div class="content">
+    <br><br><br><br><br>
+    <a class="back-link" [routerLink]="backRoute">&#8592; Zurück</a>
+
+    @if (loading) {
+      <div class="blog-status">
+        <img src="assets/nostr-logo.svg" alt="Nostr Logo" class="nostr-logo loading">
+      </div>
+    }
+
+    @if (!loading && notFound) {
+      <div class="blog-status">
+        Blogeintrag nicht gefunden.
+      </div>
+    }
+
+    @if (!loading && blogDetail) {
+      <article class="blog-article">
+        @if (blogDetail.image) {
+          <img class="blog-article-image" [src]="blogDetail.image" [alt]="blogDetail.title">
+        }
+        <div class="blog-entry-date">
+          {{ blogDetail.date * 1000 | date:'dd.MM.yyyy' }}
+        </div>
+        <h1>{{ blogDetail.title }}</h1>
+        <div class="blog-article-content" [innerHTML]="formattedContent"></div>
+      </article>
+    }
+    <br><br>
+    <a class="back-link" [routerLink]="backRoute">&#8592; Zurück</a>
+  </div>
+</div>
